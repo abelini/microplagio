@@ -144,3 +144,10 @@
 body.is-locked {
   overflow: hidden;
 }
+
+/* WordPress inyecta los estilos de enlaces sin capa; esta regla evita que
+   su azul por defecto se imponga sobre la interfaz del tema. */
+:where(a):not(.wp-element-button) {
+  color: inherit;
+  text-decoration: none;
+}

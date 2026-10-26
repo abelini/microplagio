@@ -10,16 +10,16 @@
   overflow-wrap: break-word;
 }
 
+.prose-mp :where(p) {
+  margin: 0;
+}
+
 .prose-mp > * + * {
   margin-top: 1.5em;
 }
 
 .prose-mp > *:first-child {
   margin-top: 0;
-}
-
-.prose-mp p {
-  margin: 0;
 }
 
 .prose-mp--sm {
@@ -74,16 +74,17 @@
 }
 
 .prose-mp a {
-  color: var(--color-cobalt);
+  color: var(--color-ink);
   text-decoration: underline;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 0.18em;
-  text-decoration-color: rgb(44 70 245 / 0.35);
+  text-decoration-color: rgb(44 70 245 / 0.55);
   transition: background 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .prose-mp a:hover {
-  text-decoration-color: var(--color-cobalt);
+  color: var(--color-ink);
+  text-decoration-color: var(--color-ink);
   background: linear-gradient(transparent 58%, rgb(255 228 92 / 0.85) 58%);
 }
 

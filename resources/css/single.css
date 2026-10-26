@@ -63,20 +63,45 @@
   padding-top: 0.5rem;
 }
 
+.post-body {
+  min-width: 0;
+}
+
 @media (min-width: 1024px) {
+  /* Sin índice el artículo se limita a una medida de lectura cómoda. */
   .post-layout {
-    grid-template-columns: 13rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 54rem);
+    justify-content: start;
     gap: 4.5rem;
     align-items: start;
   }
 
   .post-layout--page {
+    grid-template-columns: minmax(0, 46rem);
+    justify-content: start;
+  }
+
+  /* El índice solo reserva su columna cuando existe de verdad. */
+  .post-layout:has(> .post-toc) {
+    grid-template-columns: 13rem minmax(0, 1fr);
+  }
+
+  .post-layout--page:has(> .post-toc) {
     grid-template-columns: 13rem minmax(0, 46rem);
   }
-}
 
-.post-body {
-  min-width: 0;
+  .post-layout > .post-body {
+    grid-column: 1 / -1;
+  }
+
+  .post-layout:has(> .post-toc) > .post-body {
+    grid-column: 2;
+  }
+
+  .post-layout:has(> .post-toc) > .post-toc {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
 
 /* Índice */

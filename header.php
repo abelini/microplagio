@@ -53,16 +53,18 @@ $mpVersion = Theme::getInstance()->version();
 
 <header class="site-head" data-site-head>
     <div class="wrap site-head__inner">
-        <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <?php if (has_custom_logo()): ?>
+        <?php if (has_custom_logo()): ?>
+            <div class="brand brand--logo">
                 <?php the_custom_logo(); ?>
-            <?php else: ?>
+            </div>
+        <?php else: ?>
+            <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="brand__mark" aria-hidden="true">&gt;_</span>
                 <span class="brand__word">
                     <span class="brand__text"><?php echo esc_html(strtolower(get_bloginfo('name'))); ?></span><span class="brand__cursor" aria-hidden="true">_</span>
                 </span>
-            <?php endif; ?>
-        </a>
+            </a>
+        <?php endif; ?>
 
         <nav class="site-nav" aria-label="<?php esc_attr_e('Navegación principal', 'microplagio'); ?>">
             <?php
