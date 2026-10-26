@@ -1,0 +1,16 @@
+# Dependencias de desarrollo
+/node_modules/
+
+# Herramientas locales del importador
+/tools/.cache/
+/tools/composer.phar
+
+# Entorno
+.env
+.env.*
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

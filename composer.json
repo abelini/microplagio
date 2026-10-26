@@ -1,0 +1,21 @@
+{
+  "name": "galaxyweb/microplagio",
+  "description": "Tema WordPress de Microplagio.",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.4",
+    "tempest/highlight": "dev-main#c0276f7ad33b6e64d0571645d7429e33b419c3af"
+  },
+  "autoload": {
+    "psr-4": {
+      "Theme\\Microplagio\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}

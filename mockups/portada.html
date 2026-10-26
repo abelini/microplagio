@@ -1,0 +1,472 @@
+<!doctype html>
+<!--
+  microplagio · si estás leyendo el código, esto es para ti:
+  $ git commit -m "otra idea que no me dejaba dormir"
+  El resto es CSS y terquedad.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microplagio — portada (mockup estático)</title>
+<meta name="description" content="Mockup estático de la portada de Microplagio: blog sobre tecnología, ciencia y rarezas.">
+<meta name="theme-color" content="#14161A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314161A'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='25' font-weight='bold' text-anchor='middle' fill='%23FFE45C'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/build/assets/app-DwncqPFE.css">
+</head>
+<body class="mp-body">
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="topbar__path" href="#">
+      <span class="topbar__prompt">abel@microplagio:~$</span>
+      <span class="topbar__cmd">tail -f blog.log</span>
+      <span class="topbar__caret" aria-hidden="true">▌</span>
+    </a>
+
+    <div class="topbar__right">
+      <span class="topbar__build" title="Último commit">main@eb3a162</span>
+
+      <span class="topbar__status">
+        <span class="dot" aria-hidden="true"></span>
+        blog en línea
+      </span>
+
+      <button type="button" class="topbar__search" aria-label="Buscar en el blog">
+        <span class="topbar__prompt" aria-hidden="true">&gt;_</span>
+        <span>grep</span>
+        <kbd>⌘K</kbd>
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="#" rel="home">
+      <span class="brand__mark" aria-hidden="true">&gt;_</span>
+      <span class="brand__word">
+        <span class="brand__text">microplagio</span><span class="brand__cursor" aria-hidden="true">_</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li class="menu-item current-menu-item"><a href="#" aria-current="page">inicio</a></li>
+        <li class="menu-item"><a href="#">humor</a></li>
+        <li class="menu-item"><a href="#">cine</a></li>
+        <li class="menu-item"><a href="#">programación</a></li>
+        <li class="menu-item"><a href="#">ciencia</a></li>
+        <li class="menu-item"><a href="#">archivo</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-head__actions">
+      <span class="head-build"><span class="dot" aria-hidden="true"></span> v1.0.0</span>
+
+      <button type="button" class="icon-btn topbar__search-mobile" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      </button>
+      <button type="button" class="icon-btn nav-burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="statusbar" aria-hidden="true">
+  <div class="wrap statusbar__inner">
+    <span class="statusbar__item statusbar__branch">git:(main)<span class="statusbar__dirty">*</span></span>
+    <span class="statusbar__item">eb3a162</span>
+    <span class="statusbar__item statusbar__ahead">↑1</span>
+    <span class="statusbar__spacer"></span>
+    <span class="statusbar__item statusbar__opt">UTF-8</span>
+    <span class="statusbar__item statusbar__opt">LF</span>
+    <span class="statusbar__item">PHP</span>
+    <span class="statusbar__item statusbar__opt">WP</span>
+    <span class="statusbar__item statusbar__opt">Vite</span>
+  </div>
+</div>
+
+<main id="main" class="site-main">
+
+  <section class="intro">
+    <div class="wrap intro__grid">
+      <div class="intro__lead">
+        <p class="kicker">// hola, mundo</p>
+
+        <div class="manifesto">
+          <span class="manifesto__open" aria-hidden="true">/*</span>
+          <h1 class="manifesto__text">Escribo sobre <mark>tecnología</mark>, ciencia y las rarezas que encuentro en el camino.</h1>
+          <span class="manifesto__close" aria-hidden="true">*/</span>
+        </div>
+
+        <p class="intro__sign">— Abel Botello · desde 2015</p>
+      </div>
+
+      <div class="intro__side">
+        <p class="intro__file"><span aria-hidden="true">$</span> cat ~/about.txt</p>
+        <p class="intro__text">Apuntes, experimentos y cosas que probablemente solo a mí me parecen interesantes. Sin prisa, sin algoritmo.</p>
+
+        <div class="intro__links">
+          <a href="#latest">↓ últimos artículos</a>
+          <a href="#">rss</a>
+          <a href="#">grep</a>
+        </div>
+
+        <p class="intro__deploy">
+          <span class="dot" aria-hidden="true"></span>
+          último commit: <span class="intro__deploy-build">eb3a162</span> · hace 2 h
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap hero-wrap" aria-label="Último artículo">
+    <article class="hero">
+      <div class="hero__copy">
+        <p class="kicker">// lo último</p>
+
+        <h2 class="hero__title">
+          <a href="#">Elon Musk quiere que la IA haga películas. Hollywood todavía puede dormir tranquilo.</a>
+        </h2>
+
+        <p class="hero__excerpt">Elon Musk lleva tanto tiempo prometiendo revoluciones tecnológicas que uno pensaría que ya habría conquistado Marte, curado el aburrimiento y conseguido que sus productos lleguen a tiempo. Ahora también quiere revolucionar el cine con inteligencia artificial.</p>
+
+        <div class="byline">
+          <img class="byline__avatar" src="img/avatar.jpg" alt="" width="80" height="80" loading="lazy">
+          <div class="byline__text">
+            <span class="byline__name">Abel Botello</span>
+            <span class="byline__meta">
+              <time datetime="2026-10-26T10:47:16-07:00">26 oct 2026</time>
+              <span aria-hidden="true">·</span>
+              <span>6 min</span>
+            </span>
+          </div>
+        </div>
+
+        <a class="btn btn--ink" href="#">
+          Leer el artículo
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="hero__media">
+        <figure class="term term--media">
+          <div class="term-bar">
+            <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="term-bar__title">~/posts/elon-musk-quiere-que-la-ia-haga-peliculas.md</span>
+            <span class="term-bar__meta"><span>+412</span> <span class="minus">−0</span></span>
+          </div>
+
+          <a class="term__frame" href="#" tabindex="-1" aria-hidden="true">
+            <img class="hero__img" src="img/3199.jpeg" alt="" width="1280" height="720">
+          </a>
+        </figure>
+
+        <p class="hero__caption">
+          <a href="#">cine</a>
+          <span aria-hidden="true">·</span>
+          <span>0 comentarios</span>
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section id="latest" class="wrap home-grid">
+    <div class="home-grid__main">
+      <div class="section-head">
+        <div>
+          <p class="kicker">// archivo</p>
+          <h2 class="section-head__title">Últimos artículos</h2>
+        </div>
+        <p class="section-head__meta">16 entradas</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/3193.jpg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">informatica</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">La inteligencia artificial encontró los errores. Ahora falta que alguien actualice el servidor.</a></h3>
+            <p class="card__excerpt">Hay dos clases de administradores de sistemas: los que mantienen todo actualizado y los que llevan tres versiones de PHP…</p>
+            <div class="card__meta">
+              <time datetime="2026-10-24T11:15:25-07:00">24 oct 2026</time>
+              <span aria-hidden="true">·</span>
+              <span>4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/3176.webp" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">humor</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">El internet pende de un hilo (y ese hilo está escrito en PHP)</a></h3>
+            <p class="card__excerpt">Si esta semana viste a los ingenieros de sistemas corriendo en círculos y sudando frío, no fue porque los servidores…</p>
+            <div class="card__meta">
+              <time datetime="2026-10-23T10:14:18-07:00">23 oct 2026</time>
+              <span aria-hidden="true">·</span>
+              <span>5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/3172.jpg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">astronomia</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Houston, tenemos un problema (y de los que huelen feo): El retrete lunar de 23 millones de dólares</a></h3>
+            <p class="card__excerpt">Llegar a la Luna es una de las hazañas más impresionantes del ingenio humano, pero aparentemente, lograr tirar de la…</p>
+            <div class="card__meta">
+              <time datetime="2026-04-02T09:51:00-07:00">2 abr 2026</time>
+              <span aria-hidden="true">·</span>
+              <span>5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/2869.jpg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">personal</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Cómo mostrar el/los último(s) videos de un canal de YouTube con PHP</a></h3>
+            <p class="card__excerpt">Hace más de 5 años escribí cómo solucionar este problema usando la clase SimpleXMLElement para leer el feed del canal…</p>
+            <div class="card__meta">
+              <time datetime="2020-12-07T19:35:41-07:00">7 dic 2020</time>
+              <span aria-hidden="true">·</span>
+              <span>7 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/2475.png" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">php</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Cómo instalar y configurar browscap.ini (PHP/Apache/WHM)</a></h3>
+            <p class="card__excerpt">Si has intentado usar la función de PHP get_browser() y te ha saltado un error, o bien, te ha dado…</p>
+            <div class="card__meta">
+              <time datetime="2016-10-10T10:59:09-07:00">10 oct 2016</time>
+              <span aria-hidden="true">·</span>
+              <span>10 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/2340.jpg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">tv</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Los spin-off que queremos ver de Juego de Tronos</a></h3>
+            <p class="card__excerpt">El universo ficticio creado por George R. R. Martin en su Canción de Hielo y Fuego además de complejo es también…</p>
+            <div class="card__meta">
+              <time datetime="2016-07-29T14:59:36-07:00">29 jul 2016</time>
+              <span aria-hidden="true">·</span>
+              <span>8 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/placeholder.svg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">personal</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Peripecia, nueva publicación cultural en Culiacán</a></h3>
+            <p class="card__excerpt">Hace unos días tuve el honor de que una revista local llamada Peripecia, utilizara algunos de mis viejos artículos sobre…</p>
+            <div class="card__meta">
+              <time datetime="2016-01-22T14:03:03-07:00">22 ene 2016</time>
+              <span aria-hidden="true">·</span>
+              <span>3 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="#" tabindex="-1" aria-hidden="true">
+            <img class="card__img" src="img/2150.jpg" alt="" width="760" height="428" loading="lazy">
+            <span class="card__cat">programacion</span>
+          </a>
+          <div class="card__body">
+            <h3 class="card__title"><a href="#">Cómo evitar que Disqus sobreescriba la función Comments Number de WordPress</a></h3>
+            <p class="card__excerpt">Debido a que a veces Disqus puede no sincronizarse correctamente con tu base de datos, está configurado por default para…</p>
+            <div class="card__meta">
+              <time datetime="2015-11-07T13:37:15-07:00">7 nov 2015</time>
+              <span aria-hidden="true">·</span>
+              <span>4 min</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <nav class="pagination" aria-label="Paginación">
+        <span class="pagination__item"><span class="page-numbers current">1</span></span>
+        <span class="pagination__item"><a class="page-numbers" href="#">2</a></span>
+        <span class="pagination__item"><a class="page-numbers next" href="#">siguiente →</a></span>
+      </nav>
+
+      <p class="eof"><span>// fin del archivo · 16 entradas · página 1/2</span></p>
+    </div>
+
+    <aside class="sidebar" aria-label="Barra lateral">
+
+      <section class="widget widget--terminal">
+        <div class="term-bar">
+          <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term-bar__title">~/ahora</span>
+        </div>
+        <div class="widget--terminal__body">
+          <p class="kicker">// ahora</p>
+          <ul class="now-list">
+            <li><span aria-hidden="true">&gt;</span> leyendo: El nombre del viento <span class="now-progress">[████░░░░] 42%</span></li>
+            <li><span aria-hidden="true">&gt;</span> construyendo: este blog</li>
+            <li><span aria-hidden="true">&gt;</span> escuchando: synthwave de fondo</li>
+            <li><span aria-hidden="true">&gt;</span> jugando: Hades II</li>
+          </ul>
+          <p class="now-uptime">uptime: 11y 2m · posts: 16</p>
+          <p class="now-cursor"><span aria-hidden="true">█</span></p>
+        </div>
+      </section>
+
+      <section class="widget">
+        <p class="kicker">// lo más leído</p>
+        <h2 class="widget__title">Populares</h2>
+
+        <ol class="rank">
+          <li class="rank__item">
+            <span class="rank__n" aria-hidden="true">01</span>
+            <a class="rank__link" href="#">La dorada cerveza: bebida con historia</a>
+            <span class="rank__meta">1 comentario</span>
+          </li>
+          <li class="rank__item">
+            <span class="rank__n" aria-hidden="true">02</span>
+            <a class="rank__link" href="#">El internet pende de un hilo (y ese hilo está escrito en PHP)</a>
+            <span class="rank__meta">0 comentarios</span>
+          </li>
+          <li class="rank__item">
+            <span class="rank__n" aria-hidden="true">03</span>
+            <a class="rank__link" href="#">Cómo instalar y configurar browscap.ini (PHP/Apache/WHM)</a>
+            <span class="rank__meta">0 comentarios</span>
+          </li>
+          <li class="rank__item">
+            <span class="rank__n" aria-hidden="true">04</span>
+            <a class="rank__link" href="#">Los spin-off que queremos ver de Juego de Tronos</a>
+            <span class="rank__meta">0 comentarios</span>
+          </li>
+          <li class="rank__item">
+            <span class="rank__n" aria-hidden="true">05</span>
+            <a class="rank__link" href="#">Juego de Tronos: 5 personajes importantes que no aparecen en la serie</a>
+            <span class="rank__meta">0 comentarios</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="widget">
+        <p class="kicker">// conversación</p>
+        <h2 class="widget__title">Comentarios recientes</h2>
+
+        <ul class="recent-comments">
+          <li>
+            <a href="#">
+              <span class="recent-comments__author">@Abel Bottello</span>
+              <span class="recent-comments__post">La dorada cerveza: bebida con historia</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="widget">
+        <p class="kicker">// etiquetas</p>
+        <h2 class="widget__title">Temas sueltos</h2>
+        <div class="tag-cloud">
+          <a href="#">ia</a>
+          <a href="#">seguridad</a>
+          <a href="#">php</a>
+          <a href="#">wordpress</a>
+          <a href="#">astronomía</a>
+          <a href="#">cerveza</a>
+          <a href="#">juego de tronos</a>
+          <a href="#">warcraft</a>
+          <a href="#">jon snow</a>
+          <a href="#">lugares perdidos</a>
+        </div>
+      </section>
+
+    </aside>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__grid">
+      <div class="site-foot__brand">
+        <a class="brand brand--foot" href="#" rel="home">
+          <span class="brand__text">microplagio</span><span class="brand__cursor" aria-hidden="true">_</span>
+        </a>
+        <p class="site-foot__tagline">Tecnología, ciencia y otras rarezas.</p>
+        <p class="site-foot__note">Hecho con WordPress, Vite y demasiado café.</p>
+        <p class="site-foot__sys"><span class="prompt">$</span> neofetch</p>
+        <p class="site-foot__sys site-foot__sys--out">WordPress · PHP · Vite</p>
+      </div>
+
+      <nav class="site-foot__col" aria-label="Secciones">
+        <p class="site-foot__title">// secciones</p>
+        <ul>
+          <li><a href="#">humor</a></li>
+          <li><a href="#">cultura</a></li>
+          <li><a href="#">ciencia</a></li>
+          <li><a href="#">programación</a></li>
+          <li><a href="#">cine</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-foot__col" aria-label="Más">
+        <p class="site-foot__title">// más</p>
+        <ul>
+          <li><a href="#">archivo</a></li>
+          <li><a href="#">buscar</a></li>
+          <li><a href="#">rss</a></li>
+          <li><a href="#">atom</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-foot__col">
+        <p class="site-foot__title">// elsewhere</p>
+        <ul class="site-foot__social">
+          <li><a href="#">github <span aria-hidden="true">↗</span></a></li>
+          <li><a href="#">x <span aria-hidden="true">↗</span></a></li>
+          <li><a href="#">mastodon <span aria-hidden="true">↗</span></a></li>
+          <li><a href="#">email <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-foot__bottom">
+      <p>© 2015–2026 Microplagio</p>
+      <p class="site-foot__git"><span aria-hidden="true">$</span> git log --oneline -1 <span class="site-foot__hash">eb3a162</span> publicar algo nuevo</p>
+      <a class="site-foot__top" href="#main">volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

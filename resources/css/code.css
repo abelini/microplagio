@@ -1,0 +1,283 @@
+/* ─────────────────────────────────────────────────────────────
+   Panel de código
+   ───────────────────────────────────────────────────────────── */
+
+.mp-code {
+  margin: 2rem 0;
+  border: 1px solid #0b0c0f;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #14161a;
+  box-shadow: 4px 4px 0 0 rgb(20 22 26 / 0.14);
+}
+
+.mp-code__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.7rem;
+  background: #1b1e24;
+  border-bottom: 1px solid #2a2f38;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #8e97a6;
+}
+
+.mp-code__dots {
+  display: flex;
+  gap: 0.25rem;
+  flex: none;
+}
+
+.mp-code__dots i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #333a45;
+}
+
+.mp-code__dots i:nth-child(1) {
+  background: #c76b5f;
+}
+
+.mp-code__dots i:nth-child(2) {
+  background: #d8b65a;
+}
+
+.mp-code__dots i:nth-child(3) {
+  background: #74a985;
+}
+
+.mp-code__path {
+  color: #6f7887;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mp-code__lang {
+  margin-left: auto;
+  color: #c9d1e0;
+  letter-spacing: 0.04em;
+}
+
+.mp-code__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #aeb7c4;
+  border: 1px solid #333a45;
+  border-radius: 3px;
+  padding: 0.15rem 0.45rem;
+  font-family: inherit;
+  font-size: 0.6rem;
+  background: transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.mp-code__copy:hover {
+  color: #fff;
+  border-color: #5a6577;
+}
+
+.mp-code__copy.is-done {
+  color: #7fdbca;
+  border-color: #7fdbca;
+}
+
+.mp-code__icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.mp-code__pre {
+  margin: 0;
+  padding: 0.9rem 0;
+  overflow-x: auto;
+  background: #14161a;
+  color: #e7e3da;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.mp-code__pre:focus-visible {
+  outline: 2px solid var(--color-marker);
+  outline-offset: -2px;
+}
+
+.mp-code__code {
+  display: block;
+  min-width: max-content;
+  counter-reset: mp-line;
+}
+
+.mp-code__line {
+  display: block;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.mp-code.has-line-numbers .mp-code__line {
+  position: relative;
+  padding-left: 3.75rem;
+}
+
+.mp-code.has-line-numbers .mp-code__line::before {
+  content: counter(mp-line);
+  counter-increment: mp-line;
+  position: absolute;
+  left: 0;
+  width: 2.75rem;
+  padding-right: 0.6rem;
+  text-align: right;
+  color: #4b5563;
+  user-select: none;
+}
+
+.mp-code__line.is-highlighted {
+  background: rgb(255 228 92 / 0.08);
+  box-shadow: inset 2px 0 0 var(--color-marker);
+}
+
+.mp-code.is-wrapped .mp-code__pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.mp-code.is-wrapped .mp-code__code {
+  min-width: 0;
+}
+
+/* Tokens (tempest/highlight) */
+
+.hl-keyword {
+  color: #9db4ff;
+}
+
+.hl-property {
+  color: #7fdbca;
+}
+
+.hl-type {
+  color: #ffd479;
+}
+
+.hl-value {
+  color: #c3e88d;
+}
+
+.hl-variable {
+  color: #e7e3da;
+}
+
+.hl-number,
+.hl-literal {
+  color: #f78c6c;
+}
+
+.hl-comment {
+  color: #6f7a89;
+  font-style: italic;
+}
+
+.hl-attribute {
+  color: #f0a6ca;
+}
+
+.hl-generic {
+  color: #c792ea;
+}
+
+.hl-operator {
+  color: #89ddff;
+}
+
+.hl-injection,
+.hl-plain {
+  color: inherit;
+}
+
+.hl-addition {
+  background: rgb(46 160 67 / 0.15);
+}
+
+.hl-deletion {
+  background: rgb(248 81 73 / 0.15);
+}
+
+.hl-strong {
+  font-weight: 700;
+}
+
+.hl-em {
+  font-style: italic;
+}
+
+/* Compatibilidad con highlight.js ya renderizado (por si acaso) */
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #9db4ff;
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #c3e88d;
+}
+
+.hljs-number {
+  color: #f78c6c;
+}
+
+.hljs-comment {
+  color: #6f7a89;
+  font-style: italic;
+}
+
+.hljs-title,
+.hljs-function .hljs-title {
+  color: #7fdbca;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #e7e3da;
+}
+
+.hljs-meta {
+  color: #ffd479;
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: #ffd479;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #c792ea;
+}
+
+/* Compatibilidad con el markup antiguo de SHCB mientras siga activo */
+
+pre.wp-block-code [class^='shcb-'],
+pre.wp-block-code [class*=' shcb-'] {
+  color: inherit;
+}
+
+pre.wp-block-code .shcb-language {
+  display: none;
+}
+
+pre.wp-block-code .shcb-loc > span {
+  display: inline;
+}
+
+/* Botón copiar dentro del editor */
+
+.editor-styles-wrapper .mp-code__copy {
+  pointer-events: none;
+}

@@ -1,0 +1,35 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/source-serif-4';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './single.css';
+@import './prose.css';
+@import './code.css';
+
+@theme {
+  --font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-paper: #faf7f2;
+  --color-paper-2: #f2ece1;
+  --color-paper-3: #e9e1d4;
+  --color-ink: #14161a;
+  --color-ink-2: #22252b;
+  --color-ink-3: #3b3f47;
+  --color-muted: #6e6a61;
+  --color-line: #e0d8cb;
+  --color-line-2: #cfc5b4;
+  --color-cobalt: #2c46f5;
+  --color-cobalt-dark: #1e32c9;
+  --color-marker: #ffe45c;
+  --color-terminal: #157347;
+  --color-alert: #b23a2e;
+
+  --shadow-hard: 2px 2px 0 0 #14161a;
+  --shadow-lift: 6px 6px 0 0 rgb(20 22 26 / 0.08);
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 405" role="img" aria-label="Ilustración de reserva">
+  <rect width="720" height="405" fill="#F2ECE1"/>
+  <g stroke="#2C46F5" stroke-opacity=".16" stroke-width="18">
+    <path d="M-200 -40l80 485"/>
+    <path d="M-110 -40l80 485"/>
+    <path d="M-20 -40l80 485"/>
+    <path d="M70 -40l80 485"/>
+    <path d="M160 -40l80 485"/>
+    <path d="M250 -40l80 485"/>
+    <path d="M340 -40l80 485"/>
+    <path d="M430 -40l80 485"/>
+    <path d="M520 -40l80 485"/>
+    <path d="M610 -40l80 485"/>
+    <path d="M700 -40l80 485"/>
+  </g>
+  <g font-family="JetBrains Mono, ui-monospace, monospace" fill="#14161A">
+    <text x="40" y="348" font-size="14" letter-spacing="2">personal</text>
+    <text x="680" y="348" font-size="13" text-anchor="end" opacity=".5">sin imagen · 1280×720</text>
+    <text x="40" y="60" font-size="13" opacity=".4">~/posts/peripecia.md</text>
+  </g>
+</svg>

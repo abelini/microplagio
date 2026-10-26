@@ -1,0 +1,353 @@
+/* ─────────────────────────────────────────────────────────────
+   Prosa del artículo
+   ───────────────────────────────────────────────────────────── */
+
+.prose-mp {
+  font-family: var(--font-body);
+  font-size: 1.19rem;
+  line-height: 1.75;
+  color: #23262b;
+  overflow-wrap: break-word;
+}
+
+.prose-mp > * + * {
+  margin-top: 1.5em;
+}
+
+.prose-mp > *:first-child {
+  margin-top: 0;
+}
+
+.prose-mp p {
+  margin: 0;
+}
+
+.prose-mp--sm {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.prose-mp h2,
+.prose-mp h3,
+.prose-mp h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  scroll-margin-top: 6.5rem;
+}
+
+.prose-mp h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  line-height: 1.15;
+  margin-top: 2.6em;
+  margin-bottom: 0.5em;
+}
+
+.prose-mp h3 {
+  font-size: 1.3rem;
+  margin-top: 2.2em;
+  margin-bottom: 0.4em;
+}
+
+.prose-mp h4 {
+  font-size: 1.05rem;
+  margin-top: 2em;
+}
+
+.prose-mp h2::before,
+.prose-mp h3::before {
+  font-family: var(--font-mono);
+  color: var(--color-cobalt);
+  margin-right: 0.5em;
+  font-weight: 500;
+}
+
+.prose-mp h2::before {
+  content: '##';
+  font-size: 0.6em;
+  vertical-align: 0.28em;
+}
+
+.prose-mp h3::before {
+  content: '#';
+  font-size: 0.7em;
+  vertical-align: 0.2em;
+}
+
+.prose-mp a {
+  color: var(--color-cobalt);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgb(44 70 245 / 0.35);
+  transition: background 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.prose-mp a:hover {
+  text-decoration-color: var(--color-cobalt);
+  background: linear-gradient(transparent 58%, rgb(255 228 92 / 0.85) 58%);
+}
+
+.prose-mp strong {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.prose-mp em {
+  font-style: italic;
+}
+
+.prose-mp ul,
+.prose-mp ol {
+  padding-left: 1.4em;
+}
+
+.prose-mp li + li {
+  margin-top: 0.35em;
+}
+
+.prose-mp ul {
+  list-style: none;
+}
+
+.prose-mp ul > li {
+  position: relative;
+}
+
+.prose-mp ul > li::before {
+  content: '▸';
+  position: absolute;
+  left: -1.2em;
+  color: var(--color-cobalt);
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+}
+
+.prose-mp ol {
+  list-style: decimal;
+}
+
+.prose-mp ol > li::marker {
+  font-family: var(--font-mono);
+  color: var(--color-muted);
+  font-size: 0.85em;
+}
+
+.prose-mp blockquote {
+  border-left: 3px solid var(--color-cobalt);
+  padding: 0.15rem 0 0.15rem 1.25rem;
+  color: var(--color-ink-3);
+  font-style: italic;
+  font-size: 1.08em;
+}
+
+.prose-mp blockquote p + p {
+  margin-top: 0.75em;
+}
+
+.prose-mp blockquote cite {
+  display: block;
+  margin-top: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--color-muted);
+}
+
+.prose-mp img {
+  border-radius: 4px;
+}
+
+.prose-mp figure {
+  margin: 2rem 0;
+}
+
+.prose-mp figure img {
+  display: block;
+  margin-inline: auto;
+}
+
+.prose-mp figcaption,
+.prose-mp .wp-caption-text {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.prose-mp .alignleft {
+  float: left;
+  margin: 0.4rem 1.5rem 1rem 0;
+  max-width: 46%;
+}
+
+.prose-mp .alignright {
+  float: right;
+  margin: 0.4rem 0 1rem 1.5rem;
+  max-width: 46%;
+}
+
+.prose-mp .aligncenter {
+  display: block;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.prose-mp .wp-caption {
+  max-width: 100%;
+}
+
+.prose-mp .fsize4 {
+  font-size: 1.15em;
+}
+
+@media (max-width: 640px) {
+  .prose-mp .alignleft,
+  .prose-mp .alignright {
+    float: none;
+    margin: 1.5rem 0;
+    max-width: 100%;
+  }
+}
+
+.prose-mp table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-line-2);
+  display: block;
+  overflow-x: auto;
+}
+
+.prose-mp th {
+  background: var(--color-paper-2);
+  text-align: left;
+  font-weight: 600;
+}
+
+.prose-mp th,
+.prose-mp td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.prose-mp tr:last-child td {
+  border-bottom: 0;
+}
+
+.prose-mp tbody tr:nth-child(even) {
+  background: rgb(255 255 255 / 0.45);
+}
+
+.prose-mp hr {
+  border: 0;
+  border-top: 1px dashed var(--color-line-2);
+  margin: 2.5rem 0;
+}
+
+.prose-mp :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 3px;
+  padding: 0.08em 0.35em;
+  color: #1f2937;
+  overflow-wrap: anywhere;
+}
+
+.prose-mp kbd {
+  font-size: 0.78em;
+  border: 1px solid var(--color-line-2);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 0.05em 0.35em;
+  background: #fff;
+}
+
+.prose-mp .wp-block-embed {
+  margin: 2rem 0;
+}
+
+.prose-mp .wp-block-embed__wrapper {
+  position: relative;
+}
+
+.prose-mp iframe {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.prose-mp .twitter-tweet {
+  margin-inline: auto;
+}
+
+/* Bloques de código sin procesar (fallback) */
+
+.prose-mp pre.wp-block-code {
+  background: var(--color-ink);
+  color: #e7e3da;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.prose-mp pre.wp-block-code code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Botones y galerías de WordPress */
+
+.prose-mp .wp-block-button__link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 3px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  text-decoration: none;
+}
+
+.prose-mp .wp-block-button__link:hover {
+  background: var(--color-marker);
+  color: var(--color-ink);
+}
+
+.prose-mp .wp-block-gallery {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.prose-mp .wp-block-gallery figure {
+  margin: 0;
+}
+
+.prose-mp .wp-block-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajustes dentro del editor */
+
+.editor-styles-wrapper .prose-mp {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.editor-styles-wrapper .mp-code {
+  margin-block: 1.5rem;
+}
