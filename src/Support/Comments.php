@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace Theme\Microplagio\Support;
 
+use WP_Comment;
+
 /**
  * Render de comentarios con estética de hilo de code review.
  */
 final class Comments
 {
     /**
-     * @param \WP_Comment          $comment Comentario actual.
+     * @param WP_Comment          $comment Comentario actual.
      * @param array<string, mixed> $args    Argumentos de wp_list_comments.
      * @param int                  $depth   Profundidad.
      */
-    public static function render(\WP_Comment $comment, array $args, int $depth): void
+    public static function render(WP_Comment $comment, array $args, int $depth): void
     {
         $isAuthor = (int) $comment->user_id > 0 && (int) $comment->user_id === (int) get_the_author_meta('ID');
         ?>
@@ -25,7 +27,7 @@ final class Comments
                     <span class="comment__who">
                         <span class="comment__author">@<?php echo esc_html(get_comment_author($comment)); ?></span>
                         <?php if ($isAuthor): ?>
-                            <span class="comment__badge"><?php esc_html_e('autor', 'microplagio'); ?></span>
+                            <span class="comment__badge"><?php echo esc_html('autor'); ?></span>
                         <?php endif; ?>
                     </span>
                     <a class="comment__date" href="<?php echo esc_url(get_comment_link($comment)); ?>">
@@ -38,7 +40,7 @@ final class Comments
 
                 <div class="comment__content prose-mp prose-mp--sm">
                     <?php if ($comment->comment_approved === '0'): ?>
-                        <p class="comment__pending"><?php esc_html_e('Tu comentario está pendiente de moderación.', 'microplagio'); ?></p>
+                        <p class="comment__pending"><?php echo esc_html('Tu comentario está pendiente de moderación.'); ?></p>
                     <?php endif; ?>
                     <?php comment_text($comment); ?>
                 </div>
@@ -49,10 +51,10 @@ final class Comments
                         'add_below' => 'comment',
                         'depth'     => $depth,
                         'max_depth' => $args['max_depth'] ?? 5,
-                        'reply_text' => '↳ ' . __('responder', 'microplagio'),
+                        'reply_text' => '↳ responder',
                     ]), $comment);
                     ?>
-                    <?php edit_comment_link(__('editar', 'microplagio'), '<span class="comment__edit">', '</span>'); ?>
+                    <?php edit_comment_link('editar', '<span class="comment__edit">', '</span>'); ?>
                 </footer>
             </article>
         <?php

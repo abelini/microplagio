@@ -12,7 +12,7 @@ $diff      = PostMeta::diffStats();
 ?>
 <article <?php post_class('hero'); ?>>
     <div class="hero__copy">
-        <p class="kicker">// <?php esc_html_e('lo último', 'microplagio'); ?></p>
+        <p class="kicker">// <?php echo esc_html('lo último'); ?></p>
 
         <h2 class="hero__title">
             <a href="<?php echo esc_url($permalink); ?>"><?php the_title(); ?></a>
@@ -33,8 +33,8 @@ $diff      = PostMeta::diffStats();
         </div>
 
         <a class="btn btn--ink" href="<?php echo esc_url($permalink); ?>">
-            <?php esc_html_e('Leer el artículo', 'microplagio'); ?>
-            <span aria-hidden="true">→</span>
+            <?php echo esc_html('Leer el artículo'); ?>
+            <i class="fa-solid fa-arrow-right"></i>
         </a>
     </div>
 

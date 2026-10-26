@@ -129,14 +129,14 @@ final class Enqueue
             'restUrl'  => esc_url_raw(rest_url()),
             'homeUrl'  => esc_url_raw(home_url('/')),
             'searchUrl' => esc_url_raw(home_url('/')),
-            'i18n'     => [
-                'searching' => __('Buscando…', 'microplagio'),
-                'noResults' => __('Sin resultados. Ni una coincidencia.', 'microplagio'),
-                'error'     => __('No se pudo buscar. Inténtalo de nuevo.', 'microplagio'),
-                'results'   => __('resultados', 'microplagio'),
-                'copy'      => __('Copiar', 'microplagio'),
-                'copied'    => __('¡Copiado!', 'microplagio'),
-                'copyError' => __('No se pudo copiar', 'microplagio'),
+            'strings'  => [
+                'searching' => 'Buscando…',
+                'noResults' => 'Sin resultados. Ni una coincidencia.',
+                'error'     => 'No se pudo buscar. Inténtalo de nuevo.',
+                'results'   => 'resultados',
+                'copy'      => 'Copiar',
+                'copied'    => '¡Copiado!',
+                'copyError' => 'No se pudo copiar',
             ],
         ];
 

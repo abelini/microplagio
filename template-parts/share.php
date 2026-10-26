@@ -8,13 +8,13 @@ $x     = 'https://x.com/intent/post?text=' . rawurlencode($title) . '&url=' . ra
 $hn    = 'https://news.ycombinator.com/submitlink?u=' . rawurlencode($url) . '&t=' . rawurlencode($title);
 ?>
 <div class="share">
-    <span class="share__label">// <?php esc_html_e('compartir', 'microplagio'); ?></span>
+    <span class="share__label">// <?php echo esc_html('compartir'); ?></span>
 
     <button type="button" class="share__btn" data-copy-link data-url="<?php echo esc_url($url); ?>">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"></path></svg>
-        <span data-copy-label><?php esc_html_e('copiar enlace', 'microplagio'); ?></span>
+        <i class="fa-solid fa-link"></i>
+        <span data-copy-label><?php echo esc_html('copiar enlace'); ?></span>
     </button>
 
-    <a class="share__btn" href="<?php echo esc_url($x); ?>" target="_blank" rel="noopener noreferrer">X<span class="screen-reader-text"> <?php esc_html_e('(se abre en una pestaña nueva)', 'microplagio'); ?></span></a>
-    <a class="share__btn" href="<?php echo esc_url($hn); ?>" target="_blank" rel="noopener noreferrer">HN<span class="screen-reader-text"> <?php esc_html_e('(se abre en una pestaña nueva)', 'microplagio'); ?></span></a>
+    <a class="share__btn" href="<?php echo esc_url($x); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span></a>
+    <a class="share__btn" href="<?php echo esc_url($hn); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-hacker-news"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span></a>
 </div>

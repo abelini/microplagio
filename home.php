@@ -22,7 +22,7 @@ $total = (int) $GLOBALS['wp_query']->found_posts;
                 </div>
 
                 <p class="intro__sign">
-                    — <?php echo esc_html(Options::get('mp_author')); ?> · <?php printf(esc_html__('desde %s', 'microplagio'), esc_html(Options::get('mp_start_year'))); ?>
+                    — <?php echo esc_html(Options::get('mp_author')); ?> · <?php printf(esc_html('desde %s'), esc_html(Options::get('mp_start_year'))); ?>
                 </p>
             </div>
 
@@ -31,7 +31,7 @@ $total = (int) $GLOBALS['wp_query']->found_posts;
                 <p class="intro__text"><?php echo esc_html(Options::get('mp_intro_text')); ?></p>
 
                 <div class="intro__links">
-                    <a href="#latest"><?php esc_html_e('↓ últimos artículos', 'microplagio'); ?></a>
+                    <a href="#latest"><i class="fa-solid fa-arrow-down"></i> <?php echo esc_html('últimos artículos'); ?></a>
                     <a href="<?php echo esc_url(get_feed_link()); ?>">rss</a>
                     <a href="<?php echo esc_url(home_url('/?s=')); ?>">grep</a>
                 </div>
@@ -39,11 +39,11 @@ $total = (int) $GLOBALS['wp_query']->found_posts;
                 <?php $lastModified = (int) get_lastpostmodified('gmt'); ?>
                 <p class="intro__deploy">
                     <span class="dot" aria-hidden="true"></span>
-                    <?php esc_html_e('último commit:', 'microplagio'); ?>
+                    <?php echo esc_html('último commit:'); ?>
                     <span class="intro__deploy-build"><?php echo esc_html(Options::get('mp_commit_hash')); ?></span>
                     <?php if ($lastModified > 0): ?>
                         <span aria-hidden="true">·</span>
-                        <span><?php printf(esc_html__('hace %s', 'microplagio'), esc_html(human_time_diff($lastModified, time()))); ?></span>
+                        <span><?php printf(esc_html('hace %s'), esc_html(human_time_diff($lastModified, time()))); ?></span>
                     <?php endif; ?>
                 </p>
             </div>
@@ -52,7 +52,7 @@ $total = (int) $GLOBALS['wp_query']->found_posts;
 
     <?php if (have_posts() && ! is_paged()): ?>
         <?php the_post(); ?>
-        <section class="wrap hero-wrap" aria-label="<?php esc_attr_e('Último artículo', 'microplagio'); ?>">
+        <section class="wrap hero-wrap" aria-label="<?php echo esc_attr('Último artículo'); ?>">
             <?php get_template_part('template-parts/hero'); ?>
         </section>
         <?php rewind_posts(); ?>
@@ -62,14 +62,14 @@ $total = (int) $GLOBALS['wp_query']->found_posts;
         <div class="home-grid__main">
             <div class="section-head">
                 <div>
-                    <p class="kicker">// <?php esc_html_e('archivo', 'microplagio'); ?></p>
-                    <h2 class="section-head__title"><?php esc_html_e('Últimos artículos', 'microplagio'); ?></h2>
+                    <p class="kicker">// <?php echo esc_html('archivo'); ?></p>
+                    <h2 class="section-head__title"><?php echo esc_html('Últimos artículos'); ?></h2>
                 </div>
                 <p class="section-head__meta">
                     <?php
                     printf(
                         /* translators: %s: número de artículos. */
-                        esc_html(_n('%s entrada', '%s entradas', $total, 'microplagio')),
+                        esc_html(($total === 1 ? '%s entrada' : '%s entradas')),
                         esc_html(number_format_i18n($total))
                     );
                     ?>

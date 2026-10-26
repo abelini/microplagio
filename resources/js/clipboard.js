@@ -1,4 +1,4 @@
-const strings = (window.mpData && window.mpData.i18n) || {};
+  const strings = (window.mpData && window.mpData.strings) || {};
 
 export function i18n(key, fallback = '') {
   return strings[key] || fallback;

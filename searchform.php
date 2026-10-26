@@ -11,7 +11,7 @@ $fieldId = wp_unique_id('search-field-');
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
     <label for="<?php echo esc_attr($fieldId); ?>" class="screen-reader-text">
-        <?php esc_html_e('Buscar', 'microplagio'); ?>
+        <?php echo esc_html('Buscar'); ?>
     </label>
     <span class="search-form__prompt" aria-hidden="true">&gt;</span>
     <input
@@ -20,10 +20,10 @@ $fieldId = wp_unique_id('search-field-');
         name="s"
         class="search-form__input"
         value="<?php echo esc_attr(get_search_query()); ?>"
-        placeholder="<?php esc_attr_e('grep …', 'microplagio'); ?>"
+        placeholder="<?php echo esc_attr('grep …'); ?>"
     >
     <button type="submit" class="search-form__submit">
         <span aria-hidden="true">↵</span>
-        <span class="screen-reader-text"><?php esc_html_e('Buscar', 'microplagio'); ?></span>
+        <span class="screen-reader-text"><?php echo esc_html('Buscar'); ?></span>
     </button>
 </form>

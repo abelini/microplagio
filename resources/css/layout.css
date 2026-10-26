@@ -324,9 +324,9 @@
   background: var(--color-paper-2);
 }
 
-.icon-btn svg {
-  width: 1.05rem;
-  height: 1.05rem;
+.icon-btn i {
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .nav-burger span {
@@ -647,6 +647,14 @@
   }
 }
 
+/* iOS hace zoom al enfocar inputs con font-size < 16px */
+@media (max-width: 767px) {
+  .search-overlay__input,
+  .search-form__input {
+    font-size: 1rem;
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────
    Pie
    ───────────────────────────────────────────────────────────── */
@@ -738,7 +746,13 @@
 
 .site-foot__social a {
   display: inline-flex;
+  align-items: baseline;
   gap: 0.3rem;
+}
+
+.site-foot__social a .fa-arrow-up-right-from-square {
+  font-size: 0.7em;
+  color: #6f6a61;
 }
 
 .site-foot__muted {

@@ -18,7 +18,7 @@ while (have_posts()) :
             <?php Breadcrumbs::render(); ?>
 
             <header class="post-head post-head--page">
-                <p class="kicker">// <?php esc_html_e('página', 'microplagio'); ?></p>
+                <p class="kicker">// <?php echo esc_html('página'); ?></p>
                 <h1 class="post-head__title"><?php the_title(); ?></h1>
             </header>
 

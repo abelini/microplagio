@@ -85,9 +85,8 @@
   border-color: #7fdbca;
 }
 
-.mp-code__icon {
-  width: 0.75rem;
-  height: 0.75rem;
+.mp-code__copy i {
+  font-size: 0.75rem;
 }
 
 .mp-code__pre {

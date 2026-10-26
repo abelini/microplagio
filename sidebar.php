@@ -11,22 +11,22 @@ $mpFilled   = (int) round($mpProgress / 100 * 8);
 $mpBar      = str_repeat('█', $mpFilled) . str_repeat('░', max(0, 8 - $mpFilled));
 
 ?>
-<aside class="sidebar" aria-label="<?php esc_attr_e('Barra lateral', 'microplagio'); ?>">
+<aside class="sidebar" aria-label="<?php echo esc_attr('Barra lateral'); ?>">
     <section class="widget widget--terminal">
             <div class="term-bar">
                 <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="term-bar__title">~/ahora</span>
             </div>
             <div class="widget--terminal__body">
-                <p class="kicker">// <?php esc_html_e('ahora', 'microplagio'); ?></p>
+                <p class="kicker">// <?php echo esc_html('ahora'); ?></p>
                 <ul class="now-list">
                     <?php if (Options::has('mp_book_title')): ?>
                         <li>
                             <span aria-hidden="true">&gt;</span>
-                            <?php esc_html_e('leyendo:', 'microplagio'); ?>
+                            <?php echo esc_html('leyendo:'); ?>
                             <?php echo esc_html(Options::get('mp_book_title')); ?>
                             <span class="now-progress" aria-hidden="true">[<?php echo esc_html($mpBar); ?>] <?php echo esc_html($mpProgress); ?>%</span>
-                            <span class="screen-reader-text"><?php printf(esc_html__('Progreso de lectura: %d%%', 'microplagio'), $mpProgress); ?></span>
+                            <span class="screen-reader-text"><?php printf(esc_html('Progreso de lectura: %d%%'), $mpProgress); ?></span>
                         </li>
                     <?php endif; ?>
 
@@ -45,8 +45,8 @@ $mpBar      = str_repeat('█', $mpFilled) . str_repeat('░', max(0, 8 - $mpFil
         </section>
 
         <section class="widget">
-            <p class="kicker">// <?php esc_html_e('lo más leído', 'microplagio'); ?></p>
-            <h2 class="widget__title"><?php esc_html_e('Populares', 'microplagio'); ?></h2>
+            <p class="kicker">// <?php echo esc_html('lo más leído'); ?></p>
+            <h2 class="widget__title"><?php echo esc_html('Populares'); ?></h2>
 
             <?php
             $popular = new WP_Query([
@@ -74,8 +74,8 @@ $mpBar      = str_repeat('█', $mpFilled) . str_repeat('░', max(0, 8 - $mpFil
         </section>
 
         <section class="widget">
-            <p class="kicker">// <?php esc_html_e('conversación', 'microplagio'); ?></p>
-            <h2 class="widget__title"><?php esc_html_e('Comentarios recientes', 'microplagio'); ?></h2>
+            <p class="kicker">// <?php echo esc_html('conversación'); ?></p>
+            <h2 class="widget__title"><?php echo esc_html('Comentarios recientes'); ?></h2>
 
             <?php
             $recent = get_comments([
@@ -99,13 +99,13 @@ $mpBar      = str_repeat('█', $mpFilled) . str_repeat('░', max(0, 8 - $mpFil
                     <?php endforeach; ?>
                 </ul>
             <?php else: ?>
-                <p class="widget__muted"><?php esc_html_e('Todavía no hay comentarios. Sé el primero.', 'microplagio'); ?></p>
+                <p class="widget__muted"><?php echo esc_html('Todavía no hay comentarios. Sé el primero.'); ?></p>
             <?php endif; ?>
         </section>
 
         <section class="widget">
-            <p class="kicker">// <?php esc_html_e('etiquetas', 'microplagio'); ?></p>
-            <h2 class="widget__title"><?php esc_html_e('Temas sueltos', 'microplagio'); ?></h2>
+            <p class="kicker">// <?php echo esc_html('etiquetas'); ?></p>
+            <h2 class="widget__title"><?php echo esc_html('Temas sueltos'); ?></h2>
             <div class="tag-cloud">
                 <?php
                 wp_tag_cloud([

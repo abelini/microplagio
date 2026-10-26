@@ -45,7 +45,7 @@ $description = get_the_archive_description();
                             <?php
                             printf(
                                 /* translators: %s: número de artículos. */
-                                esc_html(_n('%s artículo publicado', '%s artículos publicados', $count, 'microplagio')),
+                                esc_html(($count === 1 ? '%s artículo publicado' : '%s artículos publicados')),
                                 esc_html(number_format_i18n($count))
                             );
                             ?>
@@ -62,13 +62,13 @@ $description = get_the_archive_description();
                     <?php
                     printf(
                         /* translators: %s: número de artículos. */
-                        esc_html(_n('%s artículo', '%s artículos', $count, 'microplagio')),
+                        esc_html(($count === 1 ? '%s artículo' : '%s artículos')),
                         esc_html(number_format_i18n($count))
                     );
                     ?>
                 </p>
 
-                <?php if (is_string($description) && trim($description) !== ''): ?>
+                <?php if (trim($description) !== ''): ?>
                     <div class="archive-head__desc"><?php echo wp_kses_post($description); ?></div>
                 <?php endif; ?>
             <?php endif; ?>

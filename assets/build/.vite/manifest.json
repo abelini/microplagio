@@ -56,12 +56,12 @@
     "src": "node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-vietnamese-wght-normal.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CCWAQn24.js",
+    "file": "assets/app-BXmZfO6W.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-CdwZYDXr.css"
+      "assets/app-DkZv02Dl.css"
     ],
     "assets": [
       "assets/space-grotesk-vietnamese-wght-normal-D0rl6rjA.woff2",
@@ -81,7 +81,7 @@
     ]
   },
   "resources/js/editor.js": {
-    "file": "assets/editor-D0nUV6g-.js",
+    "file": "assets/editor-BcF10vMV.js",
     "name": "editor",
     "src": "resources/js/editor.js",
     "isEntry": true

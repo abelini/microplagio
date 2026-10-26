@@ -20,29 +20,29 @@ final class Customizer
     public function registerCustomizer(WP_Customize_Manager $customize): void
     {
         $customize->add_section('microplagio', [
-            'title'       => __('Microplagio', 'microplagio'),
-            'description' => __('Textos de portada, terminal, estado y redes sociales.', 'microplagio'),
+            'title'       => 'Microplagio',
+            'description' => 'Textos de portada, terminal, estado y redes sociales.',
             'priority'    => 30,
         ]);
 
-        $this->text($customize, 'mp_status', __('Estado de la barra superior', 'microplagio'));
-        $this->text($customize, 'mp_kicker', __('Kicker de portada', 'microplagio'));
-        $this->textarea($customize, 'mp_intro', __('Manifiesto de portada', 'microplagio'), 4, 'wp_kses_post');
-        $this->textarea($customize, 'mp_intro_text', __('Entradilla de portada', 'microplagio'), 4);
-        $this->textarea($customize, 'mp_now', __('Panel «ahora» (una línea por elemento)', 'microplagio'), 6);
-        $this->text($customize, 'mp_book_title', __('Libro en curso', 'microplagio'));
-        $this->number($customize, 'mp_book_progress', __('Progreso de lectura (%)', 'microplagio'), 0, 100);
-        $this->text($customize, 'mp_author', __('Autor', 'microplagio'));
-        $this->number($customize, 'mp_start_year', __('Año de inicio', 'microplagio'), 1990, 2100);
-        $this->text($customize, 'mp_branch', __('Rama de git', 'microplagio'));
-        $this->text($customize, 'mp_commit_hash', __('Hash del último commit', 'microplagio'));
-        $this->text($customize, 'mp_footer_note', __('Nota del pie', 'microplagio'));
+        $this->text($customize, 'mp_status', 'Estado de la barra superior');
+        $this->text($customize, 'mp_kicker', 'Kicker de portada');
+        $this->textarea($customize, 'mp_intro', 'Manifiesto de portada', 4, 'wp_kses_post');
+        $this->textarea($customize, 'mp_intro_text', 'Entradilla de portada', 4);
+        $this->textarea($customize, 'mp_now', 'Panel «ahora» (una línea por elemento)', 6);
+        $this->text($customize, 'mp_book_title', 'Libro en curso');
+        $this->number($customize, 'mp_book_progress', 'Progreso de lectura (%)', 0, 100);
+        $this->text($customize, 'mp_author', 'Autor');
+        $this->number($customize, 'mp_start_year', 'Año de inicio', 1990, 2100);
+        $this->text($customize, 'mp_branch', 'Rama de git');
+        $this->text($customize, 'mp_commit_hash', 'Hash del último commit');
+        $this->text($customize, 'mp_footer_note', 'Nota del pie');
 
-        $this->url($customize, 'mp_social_github', __('GitHub', 'microplagio'));
-        $this->url($customize, 'mp_social_x', __('X / Twitter', 'microplagio'));
-        $this->url($customize, 'mp_social_mastodon', __('Mastodon', 'microplagio'));
-        $this->url($customize, 'mp_social_linkedin', __('LinkedIn', 'microplagio'));
-        $this->url($customize, 'mp_social_email', __('Email (mailto)', 'microplagio'));
+        $this->url($customize, 'mp_social_github', 'GitHub');
+        $this->url($customize, 'mp_social_x', 'X / Twitter');
+        $this->url($customize, 'mp_social_mastodon', 'Mastodon');
+        $this->url($customize, 'mp_social_linkedin', 'LinkedIn');
+        $this->url($customize, 'mp_social_email', 'Email (mailto)');
     }
 
     private function text(WP_Customize_Manager $customize, string $id, string $label, string $default = ''): void

@@ -11,7 +11,7 @@ $requestPath = isset($_SERVER['REQUEST_URI'])
 <main id="main" class="site-main">
     <div class="wrap">
         <div class="notfound">
-            <p class="kicker">// <?php esc_html_e('error 404', 'microplagio'); ?></p>
+            <p class="kicker">// <?php echo esc_html('error 404'); ?></p>
 
             <h1 class="notfound__title">404</h1>
 
@@ -27,17 +27,17 @@ bash: cd: no such file or directory
             </div>
 
             <p class="notfound__text">
-                <?php esc_html_e('La página que buscas no existe, se mudó o nunca estuvo aquí. Puede que el enlace esté mal escrito.', 'microplagio'); ?>
+                <?php echo esc_html('La página que buscas no existe, se mudó o nunca estuvo aquí. Puede que el enlace esté mal escrito.'); ?>
             </p>
 
             <div class="notfound__actions">
                 <?php get_search_form(); ?>
-                <a class="btn btn--marker" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Volver al inicio', 'microplagio'); ?></a>
+                <a class="btn btn--marker" href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html('Volver al inicio'); ?></a>
             </div>
 
             <div class="notfound__latest">
-                <p class="kicker">// <?php esc_html_e('mientras tanto', 'microplagio'); ?></p>
-                <h2 class="section-head__title"><?php esc_html_e('Lo último que escribí', 'microplagio'); ?></h2>
+                <p class="kicker">// <?php echo esc_html('mientras tanto'); ?></p>
+                <h2 class="section-head__title"><?php echo esc_html('Lo último que escribí'); ?></h2>
 
                 <?php
                 $latest = new WP_Query([

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Theme\Microplagio\Support;
 
+use DateInterval;
+use DateTimeImmutable;
+
 /**
  * Datos calculados del sitio para la terminal y los widgets.
  */
@@ -12,41 +15,35 @@ final class Site
     /**
      * Fecha del primer artículo publicado (cacheada por petición).
      */
-    public static function firstPostDate(): ?\DateTimeImmutable
+    public static function firstPostDate(): DateTimeImmutable
     {
-        static $loaded = false;
         static $date = null;
 
-        if ($loaded) {
+        if ($date !== null) {
             return $date;
         }
 
-        $loaded = true;
-
         $ids = get_posts([
-            'numberposts'      => 1,
-            'post_type'        => 'post',
-            'post_status'      => 'publish',
-            'orderby'          => 'date',
-            'order'            => 'ASC',
-            'fields'           => 'ids',
-            'no_found_rows'    => true,
+            'numberposts' => 1,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'fields' => 'ids',
+            'no_found_rows' => true,
             'suppress_filters' => true,
         ]);
 
-        if ($ids === []) {
-            return null;
-        }
+        return $date = (new DateTimeImmutable('@' . (int) get_post_time('U', true, (int) $ids[0], true)))
+            ->setTimezone(wp_timezone());
+    }
 
-        $timestamp = (int) get_post_time('U', true, (int) $ids[0], true);
-
-        if ($timestamp <= 0) {
-            return null;
-        }
-
-        $date = (new \DateTimeImmutable('@' . $timestamp))->setTimezone(wp_timezone());
-
-        return $date;
+    /**
+     * Intervalo desde el primer artículo hasta ahora.
+     */
+    public static function uptimeInterval(): DateInterval
+    {
+        return self::firstPostDate()->diff(new DateTimeImmutable('now', wp_timezone()));
     }
 
     /**
@@ -54,17 +51,7 @@ final class Site
      */
     public static function uptime(): string
     {
-        $first = self::firstPostDate();
-
-        if (! $first instanceof \DateTimeImmutable) {
-            return '—';
-        }
-
-        $diff = $first->diff(new \DateTimeImmutable('now', wp_timezone()));
-
-        if ($diff->y <= 0 && $diff->m <= 0) {
-            return sprintf('%dd', max(0, $diff->d));
-        }
+        $diff = self::uptimeInterval();
 
         return sprintf('%dy %dm', $diff->y, $diff->m);
     }

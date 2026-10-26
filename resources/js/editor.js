@@ -12,7 +12,6 @@
   const { InspectorControls } = wp.blockEditor;
   const { PanelBody, SelectControl, ToggleControl, TextControl } = wp.components;
   const { createElement: el, Fragment } = wp.element;
-  const { __ } = wp.i18n || { __: (text) => text };
 
   const catalogue = window.mpCodeLanguages || { '': 'Detectar automáticamente' };
   const options = Object.keys(catalogue).map((value) => ({
@@ -59,29 +58,29 @@
           el(
             PanelBody,
             {
-              title: __('Resaltado de código', 'microplagio'),
+              title: 'Resaltado de código',
               initialOpen: true,
               className: 'mp-code-inspector',
             },
             el(SelectControl, {
-              label: __('Lenguaje', 'microplagio'),
+              label: 'Lenguaje',
               value: attributes.language || '',
               options,
               onChange: (value) => setAttributes({ language: value }),
             }),
             el(ToggleControl, {
-              label: __('Números de línea', 'microplagio'),
+              label: 'Números de línea',
               checked: attributes.showLineNumbers !== false,
               onChange: (value) => setAttributes({ showLineNumbers: value }),
             }),
             el(ToggleControl, {
-              label: __('Ajustar líneas largas', 'microplagio'),
+              label: 'Ajustar líneas largas',
               checked: Boolean(attributes.wrapLines),
               onChange: (value) => setAttributes({ wrapLines: value }),
             }),
             el(TextControl, {
-              label: __('Líneas resaltadas', 'microplagio'),
-              help: __('Ejemplo: 2,5-8. Déjalo vacío para no resaltar ninguna.', 'microplagio'),
+              label: 'Líneas resaltadas',
+              help: 'Ejemplo: 2,5-8. Déjalo vacío para no resaltar ninguna.',
               value: attributes.highlightedLines || '',
               onChange: (value) => setAttributes({ highlightedLines: value }),
             })

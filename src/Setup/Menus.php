@@ -17,9 +17,9 @@ final class Menus
     public function registerMenus(): void
     {
         register_nav_menus([
-            'primary' => __('Menú principal', 'microplagio'),
-            'footer'  => __('Menú del pie', 'microplagio'),
-            'social'  => __('Redes sociales', 'microplagio'),
+            'primary' => 'Menú principal',
+            'footer'  => 'Menú del pie',
+            'social'  => 'Redes sociales',
         ]);
     }
 }

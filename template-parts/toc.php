@@ -13,19 +13,19 @@ if ($html === '') {
 
 $count = count($items);
 ?>
-<aside class="post-toc" aria-label="<?php esc_attr_e('Índice del artículo', 'microplagio'); ?>">
+<aside class="post-toc" aria-label="<?php echo esc_attr('Índice del artículo'); ?>">
     <div class="post-toc__inner">
         <?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML construido y escapado en Toc. ?>
         <a class="post-toc__top" href="#main">
-            <span aria-hidden="true">↑</span> <?php esc_html_e('volver arriba', 'microplagio'); ?>
+            <i class="fa-solid fa-arrow-up"></i> <?php echo esc_html('volver arriba'); ?>
         </a>
     </div>
 </aside>
 
 <details class="toc-mobile">
     <summary>
-        <span class="kicker">// <?php esc_html_e('índice', 'microplagio'); ?></span>
-        <span class="toc-mobile__count"><?php echo esc_html(sprintf(_n('%d sección', '%d secciones', $count, 'microplagio'), $count)); ?></span>
+        <span class="kicker">// <?php echo esc_html('índice'); ?></span>
+        <span class="toc-mobile__count"><?php echo esc_html(sprintf(($count === 1 ? '%d sección' : '%d secciones'), $count)); ?></span>
     </summary>
     <?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 </details>

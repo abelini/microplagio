@@ -31,7 +31,7 @@ while (have_posts()) :
                         ?>
                     </p>
                 <?php else: ?>
-                    <p class="kicker">// <?php esc_html_e('artículo', 'microplagio'); ?></p>
+                    <p class="kicker">// <?php echo esc_html('artículo'); ?></p>
                 <?php endif; ?>
 
                 <h1 class="post-head__title"><?php the_title(); ?></h1>

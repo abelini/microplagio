@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+use Theme\Microplagio\Support\PostMeta;
+
 $currentId = (int) get_the_ID();
-$category  = \Theme\Microplagio\Support\PostMeta::primaryCategory($currentId);
+$category  = PostMeta::primaryCategory($currentId);
 $categories = $category instanceof WP_Term ? [$category->term_id] : wp_get_post_categories($currentId);
 
 $related = new WP_Query([
@@ -33,8 +35,8 @@ if (! $related->have_posts()) {
 <section class="related" aria-labelledby="related-title">
     <div class="section-head">
         <div>
-            <p class="kicker">// <?php esc_html_e('sigue leyendo', 'microplagio'); ?></p>
-            <h2 id="related-title" class="section-head__title"><?php esc_html_e('También te puede interesar', 'microplagio'); ?></h2>
+            <p class="kicker">// <?php echo esc_html('sigue leyendo'); ?></p>
+            <h2 id="related-title" class="section-head__title"><?php echo esc_html('También te puede interesar'); ?></h2>
         </div>
     </div>
 

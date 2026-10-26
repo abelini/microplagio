@@ -9,7 +9,7 @@ get_header();
 <main id="main" class="site-main">
     <div class="wrap">
         <header class="archive-head">
-            <p class="kicker">// <?php esc_html_e('archivo', 'microplagio'); ?></p>
+            <p class="kicker">// <?php echo esc_html('archivo'); ?></p>
             <h1 class="archive-head__title"><?php echo esc_html(wp_strip_all_tags(get_the_archive_title())); ?></h1>
         </header>
 

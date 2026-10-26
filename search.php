@@ -20,7 +20,7 @@ $query   = get_search_query();
                 <?php
                 printf(
                     /* translators: %s: término de búsqueda. */
-                    esc_html__('Resultados para «%s»', 'microplagio'),
+                    esc_html('Resultados para «%s»'),
                     esc_html($query)
                 );
                 ?>
@@ -29,7 +29,7 @@ $query   = get_search_query();
                 <?php
                 printf(
                     /* translators: %s: número de coincidencias. */
-                    esc_html(_n('%s coincidencia', '%s coincidencias', $count, 'microplagio')),
+                    esc_html(($count === 1 ? '%s coincidencia' : '%s coincidencias')),
                     esc_html(number_format_i18n($count))
                 );
                 ?>

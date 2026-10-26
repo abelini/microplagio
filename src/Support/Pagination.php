@@ -15,12 +15,12 @@ final class Pagination
             'type'      => 'array',
             'mid_size'  => 1,
             'end_size'  => 1,
-            'prev_text' => '← ' . __('anterior', 'microplagio'),
-            'next_text' => __('siguiente', 'microplagio') . ' →',
+            'prev_text' => '<i class="fa-solid fa-arrow-left"></i> anterior',
+            'next_text' => 'siguiente <i class="fa-solid fa-arrow-right"></i>',
         ]);
 
         if (is_array($links) && $links !== []) {
-            echo '<nav class="pagination" aria-label="' . esc_attr__('Paginación', 'microplagio') . '">';
+            echo '<nav class="pagination" aria-label="' . esc_attr('Paginación') . '">';
 
             foreach ($links as $link) {
                 echo '<span class="pagination__item">' . $link . '</span>';
@@ -37,16 +37,16 @@ final class Pagination
 
         $entries = sprintf(
             /* translators: %s: número de artículos. */
-            _n('%s entrada', '%s entradas', $total, 'microplagio'),
+            ($total === 1 ? '%s entrada' : '%s entradas'),
             number_format_i18n($total)
         );
 
-        echo '<p class="eof"><span>// ' . esc_html__('fin del archivo', 'microplagio') . ' · ' . esc_html($entries);
+        echo '<p class="eof"><span>// ' . esc_html('fin del archivo') . ' · ' . esc_html($entries);
 
         if ($max > 1) {
             echo ' · ' . esc_html(sprintf(
                 /* translators: 1: página actual, 2: total de páginas. */
-                __('página %1$d/%2$d', 'microplagio'),
+                'página %1$d/%2$d',
                 $current,
                 $max
             ));

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Theme\Microplagio\Setup;
 
 use Theme\Microplagio\Support\PostMeta;
+use WP_Term;
 
 /**
  * Metadatos sociales y datos estructurados.
@@ -18,6 +19,15 @@ final class MetaTags
     {
         add_action('wp_head', [$this, 'social'], 5);
         add_action('wp_head', [$this, 'schema'], 20);
+        add_action('wp_head', [$this, 'fontAwesome'], 1);
+    }
+
+    /**
+     * Kit de Font Awesome (alojado externamente, ESM con async auto).
+     */
+    public function fontAwesome(): void
+    {
+        echo '<script src="https://kit.fontawesome.com/a75f96ae3d.js" crossorigin="anonymous"></script>' . "\n";
     }
 
     public function social(): void
@@ -141,7 +151,7 @@ final class MetaTags
         $position = 2;
         $term     = PostMeta::primaryCategory();
 
-        if ($term instanceof \WP_Term) {
+        if ($term instanceof WP_Term) {
             foreach (PostMeta::categoryPath($term) as $crumb) {
                 $items[] = [
                     '@type'    => 'ListItem',
@@ -182,27 +192,19 @@ final class MetaTags
 
         $tagline = get_bloginfo('description');
 
-        return is_string($tagline) ? $tagline : '';
+        return $tagline;
     }
 
     private function image(): string
     {
         if (is_singular() && has_post_thumbnail()) {
-            $url = get_the_post_thumbnail_url(null, 'mp-hero');
-
-            if (is_string($url)) {
-                return $url;
-            }
+            return (string) get_the_post_thumbnail_url(null, 'mp-hero');
         }
 
         $customLogo = get_theme_mod('custom_logo');
 
         if ($customLogo) {
-            $url = wp_get_attachment_image_url((int) $customLogo, 'full');
-
-            if (is_string($url)) {
-                return $url;
-            }
+            return (string) wp_get_attachment_image_url((int) $customLogo, 'full');
         }
 
         return '';

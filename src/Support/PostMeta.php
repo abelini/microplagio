@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Theme\Microplagio\Support;
 
+use WP_Term;
+
 /**
  * Metadatos y utilidades de los artículos.
  */
@@ -30,12 +32,7 @@ final class PostMeta
     public static function date(?int $postId = null): string
     {
         $timestamp = (int) get_post_time('U', true, $postId, true);
-
-        if ($timestamp <= 0) {
-            return '';
-        }
-
-        $month = (int) wp_date('n', $timestamp);
+        $month     = (int) wp_date('n', $timestamp);
 
         return sprintf(
             '%d %s %s',
@@ -65,11 +62,7 @@ final class PostMeta
     {
         $minutes = max(1, (int) ceil(self::wordCount($postId) / 220));
 
-        return sprintf(
-            /* translators: %d: número de minutos. */
-            _n('%d min', '%d min', $minutes, 'microplagio'),
-            $minutes
-        );
+        return sprintf('%d min', $minutes);
     }
 
     /**
@@ -85,13 +78,9 @@ final class PostMeta
         ];
     }
 
-    public static function primaryCategory(?int $postId = null): ?\WP_Term
+    public static function primaryCategory(?int $postId = null): ?WP_Term
     {
         $postId ??= (int) get_the_ID();
-
-        if ($postId <= 0) {
-            return null;
-        }
 
         $terms = get_the_category($postId);
 
@@ -99,7 +88,7 @@ final class PostMeta
             return null;
         }
 
-        usort($terms, static function (\WP_Term $a, \WP_Term $b): int {
+        usort($terms, static function (WP_Term $a, WP_Term $b): int {
             $depthA = count(get_ancestors($a->term_id, 'category', 'taxonomy'));
             $depthB = count(get_ancestors($b->term_id, 'category', 'taxonomy'));
 
@@ -112,16 +101,16 @@ final class PostMeta
     /**
      * Devuelve la ruta completa de una categoría (de raíz a hoja).
      *
-     * @return array<int, \WP_Term>
+     * @return array<int, WP_Term>
      */
-    public static function categoryPath(\WP_Term $term): array
+    public static function categoryPath(WP_Term $term): array
     {
         $path = [];
 
         foreach (array_reverse(get_ancestors($term->term_id, $term->taxonomy, 'taxonomy')) as $id) {
             $ancestor = get_term($id, $term->taxonomy);
 
-            if ($ancestor instanceof \WP_Term) {
+            if ($ancestor instanceof WP_Term) {
                 $path[] = $ancestor;
             }
         }
@@ -142,7 +131,7 @@ final class PostMeta
 
         return sprintf(
             /* translators: %s: número de comentarios. */
-            _n('%s comentario', '%s comentarios', $count, 'microplagio'),
+            ($count === 1 ? '%s comentario' : '%s comentarios'),
             number_format_i18n($count)
         );
     }

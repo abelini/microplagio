@@ -8,12 +8,12 @@ use Theme\Microplagio\Support\PostMeta;
 $authorId = (int) get_the_author_meta('ID');
 
 $socials = array_filter([
-    'github'   => Options::get('mp_social_github'),
-    'x'        => Options::get('mp_social_x'),
-    'mastodon' => Options::get('mp_social_mastodon'),
-    'linkedin' => Options::get('mp_social_linkedin'),
-    'email'    => Options::get('mp_social_email'),
-], static fn (string $url): bool => trim($url) !== '');
+    'github'   => ['url' => Options::get('mp_social_github'), 'icon' => 'fa-brands fa-github'],
+    'x'        => ['url' => Options::get('mp_social_x'), 'icon' => 'fa-brands fa-x-twitter'],
+    'mastodon' => ['url' => Options::get('mp_social_mastodon'), 'icon' => 'fa-brands fa-mastodon'],
+    'linkedin' => ['url' => Options::get('mp_social_linkedin'), 'icon' => 'fa-brands fa-linkedin'],
+    'email'    => ['url' => Options::get('mp_social_email'), 'icon' => 'fa-solid fa-envelope'],
+], static fn (array $social): bool => trim($social['url']) !== '');
 ?>
 <section class="author-box">
     <div class="author-box__avatar">
@@ -27,12 +27,16 @@ $socials = array_filter([
 
         <div class="author-box__links">
             <a class="author-box__more" href="<?php echo esc_url((string) get_author_posts_url($authorId)); ?>">
-                <?php esc_html_e('todos sus artículos', 'microplagio'); ?> <span aria-hidden="true">→</span>
+                <?php echo esc_html('todos sus artículos'); ?> <i class="fa-solid fa-arrow-right"></i>
             </a>
 
-            <?php foreach ($socials as $network => $url): ?>
-                <a href="<?php echo esc_url($url); ?>" <?php echo $network === 'email' ? '' : 'target="_blank" rel="me noopener noreferrer"'; ?>>
-                    <?php echo esc_html($network); ?> <span aria-hidden="true">↗</span>
+            <?php foreach ($socials as $network => $social): ?>
+                <a href="<?php echo esc_url($social['url']); ?>" <?php echo $network === 'email' ? '' : 'target="_blank" rel="me noopener noreferrer"'; ?>>
+                    <i class="<?php echo esc_attr($social['icon']); ?>" aria-hidden="true"></i>
+                    <?php echo esc_html($network); ?>
+                    <?php if ($network !== 'email'): ?>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span>
+                    <?php endif; ?>
                 </a>
             <?php endforeach; ?>
         </div>

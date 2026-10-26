@@ -24,7 +24,7 @@ $mpVersion = Theme::getInstance()->version();
 <body <?php body_class('mp-body'); ?>>
 <?php wp_body_open(); ?>
 
-<a class="skip-link" href="#main"><?php esc_html_e('Saltar al contenido', 'microplagio'); ?></a>
+<a class="skip-link" href="#main"><?php echo esc_html('Saltar al contenido'); ?></a>
 
 <div class="topbar">
     <div class="wrap topbar__inner">
@@ -35,16 +35,16 @@ $mpVersion = Theme::getInstance()->version();
         </a>
 
         <div class="topbar__right">
-            <span class="topbar__build" title="<?php esc_attr_e('Último commit', 'microplagio'); ?>"><?php echo esc_html($mpBranch . '@' . $mpHash); ?></span>
+            <span class="topbar__build" title="<?php echo esc_attr('Último commit'); ?>"><?php echo esc_html($mpBranch . '@' . $mpHash); ?></span>
 
             <span class="topbar__status">
                 <span class="dot" aria-hidden="true"></span>
                 <?php echo esc_html(Options::get('mp_status')); ?>
             </span>
 
-            <button type="button" class="topbar__search" data-search-open aria-label="<?php esc_attr_e('Buscar en el blog', 'microplagio'); ?>">
+            <button type="button" class="topbar__search" data-search-open aria-label="<?php echo esc_attr('Buscar en el blog'); ?>">
                 <span class="topbar__prompt" aria-hidden="true">&gt;_</span>
-                <span><?php esc_html_e('grep', 'microplagio'); ?></span>
+                <span><?php echo esc_html('grep'); ?></span>
                 <kbd><?php echo esc_html(wp_is_mobile() ? '/' : '⌘K'); ?></kbd>
             </button>
         </div>
@@ -66,7 +66,7 @@ $mpVersion = Theme::getInstance()->version();
             </a>
         <?php endif; ?>
 
-        <nav class="site-nav" aria-label="<?php esc_attr_e('Navegación principal', 'microplagio'); ?>">
+        <nav class="site-nav" aria-label="<?php echo esc_attr('Navegación principal'); ?>">
             <?php
             wp_nav_menu([
                 'theme_location' => 'primary',
@@ -81,10 +81,10 @@ $mpVersion = Theme::getInstance()->version();
         <div class="site-head__actions">
             <span class="head-build"><span class="dot" aria-hidden="true"></span> v<?php echo esc_html($mpVersion); ?></span>
 
-            <button type="button" class="icon-btn topbar__search-mobile" data-search-open aria-label="<?php esc_attr_e('Buscar', 'microplagio'); ?>">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <button type="button" class="icon-btn topbar__search-mobile" data-search-open aria-label="<?php echo esc_attr('Buscar'); ?>">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button type="button" class="icon-btn nav-burger" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="<?php esc_attr_e('Abrir menú', 'microplagio'); ?>">
+            <button type="button" class="icon-btn nav-burger" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="<?php echo esc_attr('Abrir menú'); ?>">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -107,13 +107,13 @@ $mpVersion = Theme::getInstance()->version();
 
 <div id="nav-drawer" class="drawer" data-nav-drawer hidden>
     <div class="drawer__backdrop" data-nav-close></div>
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Menú', 'microplagio'); ?>">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="<?php echo esc_attr('Menú'); ?>">
         <div class="drawer__head">
             <span class="topbar__path">~/menu</span>
-            <button type="button" class="icon-btn" data-nav-close aria-label="<?php esc_attr_e('Cerrar menú', 'microplagio'); ?>">✕</button>
+            <button type="button" class="icon-btn" data-nav-close aria-label="<?php echo esc_attr('Cerrar menú'); ?>">✕</button>
         </div>
 
-        <p class="kicker">// <?php esc_html_e('navegación', 'microplagio'); ?></p>
+        <p class="kicker">// <?php echo esc_html('navegación'); ?></p>
         <?php
         wp_nav_menu([
             'theme_location' => 'primary',
@@ -124,7 +124,7 @@ $mpVersion = Theme::getInstance()->version();
         ]);
         ?>
 
-        <p class="kicker drawer__kicker">// <?php esc_html_e('categorías', 'microplagio'); ?></p>
+        <p class="kicker drawer__kicker">// <?php echo esc_html('categorías'); ?></p>
         <ul class="drawer__cats">
             <?php foreach (get_categories(['number' => 8, 'orderby' => 'count', 'order' => 'DESC', 'hide_empty' => true]) as $category): ?>
                 <li>
@@ -137,7 +137,7 @@ $mpVersion = Theme::getInstance()->version();
         </ul>
 
         <button type="button" class="btn btn--marker drawer__search" data-search-open>
-            <span aria-hidden="true">&gt;_</span> <?php esc_html_e('Buscar en el blog', 'microplagio'); ?>
+            <span aria-hidden="true">&gt;_</span> <?php echo esc_html('Buscar en el blog'); ?>
         </button>
     </div>
 </div>

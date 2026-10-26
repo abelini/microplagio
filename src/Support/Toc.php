@@ -64,8 +64,8 @@ final class Toc
             return '';
         }
 
-        $html = '<nav class="toc" aria-label="' . esc_attr__('Índice del artículo', 'microplagio') . '">';
-        $html .= '<p class="toc__title">// ' . esc_html__('índice', 'microplagio') . '</p>';
+        $html = '<nav class="toc" aria-label="' . esc_attr('Índice del artículo') . '">';
+        $html .= '<p class="toc__title">// ' . esc_html('índice') . '</p>';
         $html .= '<ol class="toc__list">';
 
         foreach ($items as $item) {

@@ -66,9 +66,7 @@ final class Theme
 
     public function version(): string
     {
-        $version = wp_get_theme()->get('Version');
-
-        return is_string($version) && $version !== '' ? $version : '1.0.0';
+        return wp_get_theme()->get('Version');
     }
 
     public function path(string $relative = ''): string

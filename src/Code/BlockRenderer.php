@@ -83,14 +83,11 @@ final class BlockRenderer
                 <span class="mp-code__path">snippet.<?php echo esc_html($ext); ?></span>
                 <span class="mp-code__lang"><?php echo esc_html($label); ?></span>
                 <button type="button" class="mp-code__copy" data-copy-code>
-                    <svg class="mp-code__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
-                        <path d="M5 15V6a2 2 0 0 1 2-2h9"></path>
-                    </svg>
-                    <span data-copy-label><?php esc_html_e('Copiar', 'microplagio'); ?></span>
+                    <i class="fa-regular fa-copy"></i>
+                    <span data-copy-label><?php echo esc_html('Copiar'); ?></span>
                 </button>
             </div>
-            <pre class="mp-code__pre" tabindex="0" aria-label="<?php echo esc_attr(sprintf(__('Código %s', 'microplagio'), $label)); ?>"><code class="mp-code__code language-<?php echo esc_attr($language); ?>"><?php echo $lines; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML escapado por Tempest. ?></code></pre>
+            <pre class="mp-code__pre" tabindex="0" aria-label="<?php echo esc_attr(sprintf('Código %s', $label)); ?>"><code class="mp-code__code language-<?php echo esc_attr($language); ?>"><?php echo $lines; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML escapado por Tempest. ?></code></pre>
         </div>
         <?php
 

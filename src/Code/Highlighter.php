@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Theme\Microplagio\Code;
 
 use Tempest\Highlight\Highlighter as TempestHighlighter;
+use Throwable;
 
 /**
  * Resaltado de código en el servidor.
@@ -46,7 +47,7 @@ final class Highlighter
 
         try {
             $html = $this->highlighter->parse($code, $language);
-        } catch (\Throwable) {
+        } catch (Throwable) {
             $html = $this->escape($code);
         }
 

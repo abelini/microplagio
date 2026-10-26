@@ -35,7 +35,7 @@ export function initSearch() {
     results.append(paragraph);
   };
 
-  const html = (key, fallback) => (data.i18n && data.i18n[key]) || fallback;
+  const html = (key, fallback) => (data.strings && data.strings[key]) || fallback;
 
   const open = () => {
     lastFocus = document.activeElement;

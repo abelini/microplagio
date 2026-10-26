@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Theme\Microplagio\Support;
 
+use WP_Term;
+
+
 /**
  * Migas de pan con estética de ruta de archivos.
  */
@@ -17,7 +20,7 @@ final class Breadcrumbs
             return;
         }
 
-        echo '<nav class="crumbs" aria-label="' . esc_attr__('Ruta de navegación', 'microplagio') . '">';
+        echo '<nav class="crumbs" aria-label="' . esc_attr('Ruta de navegación') . '">';
         echo '<a class="crumbs__root" href="' . esc_url(home_url('/')) . '">~</a>';
 
         foreach ($parts as $part) {
@@ -47,7 +50,7 @@ final class Breadcrumbs
         if (is_singular()) {
             $term = is_singular('post') ? PostMeta::primaryCategory() : null;
 
-            if ($term instanceof \WP_Term) {
+            if ($term instanceof WP_Term) {
                 foreach (PostMeta::categoryPath($term) as $crumb) {
                     $parts[] = [
                         'label' => $crumb->slug,
@@ -64,7 +67,7 @@ final class Breadcrumbs
         if (is_category() || is_tag() || is_tax()) {
             $term = get_queried_object();
 
-            if ($term instanceof \WP_Term) {
+            if ($term instanceof WP_Term) {
                 if (is_tag()) {
                     $parts[] = ['label' => '#' . $term->slug, 'url' => null];
 

@@ -5,14 +5,14 @@ declare(strict_types=1);
 use Theme\Microplagio\Support\Options;
 
 $socials = [
-    'github'   => Options::get('mp_social_github'),
-    'x'        => Options::get('mp_social_x'),
-    'mastodon' => Options::get('mp_social_mastodon'),
-    'linkedin' => Options::get('mp_social_linkedin'),
-    'email'    => Options::get('mp_social_email'),
+    'github'   => ['url' => Options::get('mp_social_github'), 'icon' => 'fa-brands fa-github', 'sri' => ''],
+    'x'        => ['url' => Options::get('mp_social_x'), 'icon' => 'fa-brands fa-x-twitter', 'sri' => ''],
+    'mastodon' => ['url' => Options::get('mp_social_mastodon'), 'icon' => 'fa-brands fa-mastodon', 'sri' => ''],
+    'linkedin' => ['url' => Options::get('mp_social_linkedin'), 'icon' => 'fa-brands fa-linkedin', 'sri' => ''],
+    'email'    => ['url' => Options::get('mp_social_email'), 'icon' => 'fa-solid fa-envelope', 'sri' => ''],
 ];
 
-$socials = array_filter($socials, static fn (string $url): bool => trim($url) !== '');
+$socials = array_filter($socials, static fn (array $social): bool => trim($social['url']) !== '');
 
 $categories = get_categories([
     'number'     => 6,
@@ -34,8 +34,8 @@ $categories = get_categories([
                 <p class="site-foot__sys site-foot__sys--out">WordPress · PHP · Vite</p>
             </div>
 
-            <nav class="site-foot__col" aria-label="<?php esc_attr_e('Secciones', 'microplagio'); ?>">
-                <p class="site-foot__title">// <?php esc_html_e('secciones', 'microplagio'); ?></p>
+            <nav class="site-foot__col" aria-label="<?php echo esc_attr('Secciones'); ?>">
+                <p class="site-foot__title">// <?php echo esc_html('secciones'); ?></p>
                 <ul>
                     <?php foreach ($categories as $category): ?>
                         <li><a href="<?php echo esc_url((string) get_category_link($category)); ?>"><?php echo esc_html(mb_strtolower($category->name)); ?></a></li>
@@ -43,30 +43,34 @@ $categories = get_categories([
                 </ul>
             </nav>
 
-            <nav class="site-foot__col" aria-label="<?php esc_attr_e('Más', 'microplagio'); ?>">
-                <p class="site-foot__title">// <?php esc_html_e('más', 'microplagio'); ?></p>
+            <nav class="site-foot__col" aria-label="<?php echo esc_attr('Más'); ?>">
+                <p class="site-foot__title">// <?php echo esc_html('más'); ?></p>
                 <ul>
-                    <li><a href="<?php echo esc_url((string) get_post_type_archive_link('post')); ?>"><?php esc_html_e('archivo', 'microplagio'); ?></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/?s=')); ?>"><?php esc_html_e('buscar', 'microplagio'); ?></a></li>
+                    <li><a href="<?php echo esc_url((string) get_post_type_archive_link('post')); ?>"><?php echo esc_html('archivo'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/?s=')); ?>"><?php echo esc_html('buscar'); ?></a></li>
                     <li><a href="<?php echo esc_url(get_feed_link()); ?>">rss</a></li>
                     <li><a href="<?php echo esc_url(home_url('/feed/atom/')); ?>">atom</a></li>
                 </ul>
             </nav>
 
             <div class="site-foot__col">
-                <p class="site-foot__title">// <?php esc_html_e('elsewhere', 'microplagio'); ?></p>
+                <p class="site-foot__title">// <?php echo esc_html('elsewhere'); ?></p>
                 <?php if ($socials !== []): ?>
                     <ul class="site-foot__social">
-                        <?php foreach ($socials as $network => $url): ?>
-                            <li>
-                                <a href="<?php echo esc_url($url); ?>" <?php echo $network === 'email' ? '' : 'target="_blank" rel="me noopener noreferrer"'; ?>>
-                                    <?php echo esc_html($network); ?> <span aria-hidden="true">↗</span>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
+                    <?php foreach ($socials as $network => $social): ?>
+                        <li>
+                            <a href="<?php echo esc_url($social['url']); ?>" <?php echo $network === 'email' ? '' : 'target="_blank" rel="me noopener noreferrer"'; ?>>
+                                <i class="<?php echo esc_attr($social['icon']); ?>" aria-hidden="true"></i>
+                                <?php echo esc_html($network); ?>
+                                <?php if ($network !== 'email'): ?>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                     </ul>
                 <?php else: ?>
-                    <p class="site-foot__muted"><?php esc_html_e('Configura tus redes en el Personalizador.', 'microplagio'); ?></p>
+                    <p class="site-foot__muted"><?php echo esc_html('Configura tus redes en el Personalizador.'); ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -82,7 +86,7 @@ $categories = get_categories([
             </p>
             <p class="site-foot__git"><span aria-hidden="true">$</span> git log --oneline -1 <span class="site-foot__hash"><?php echo esc_html(Options::get('mp_commit_hash')); ?></span> publicar algo nuevo</p>
             <button type="button" class="site-foot__top" data-top>
-                <?php esc_html_e('volver arriba', 'microplagio'); ?> <span aria-hidden="true">↑</span>
+                <?php echo esc_html('volver arriba'); ?> <i class="fa-solid fa-arrow-up"></i>
             </button>
         </div>
     </div>
