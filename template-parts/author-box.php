@@ -23,7 +23,7 @@ $socials = array_filter([
     <div class="author-box__body">
         <p class="kicker">// whoami</p>
         <h2 class="author-box__name"><?php the_author(); ?></h2>
-        <p class="author-box__bio"><?php echo esc_html(PostMeta::authorBio()); ?></p>
+        <p class="author-box__bio"><?php echo wp_kses_post(PostMeta::authorBio()); ?></p>
 
         <div class="author-box__links">
             <a class="author-box__more" href="<?php echo esc_url((string) get_author_posts_url($authorId)); ?>">

@@ -11,7 +11,6 @@ use Theme\Microplagio\Setup\Editor;
 use Theme\Microplagio\Setup\Enqueue;
 use Theme\Microplagio\Setup\Menus;
 use Theme\Microplagio\Setup\MetaTags;
-use Theme\Microplagio\Setup\Sidebars;
 use Theme\Microplagio\Setup\ThemeSetup;
 
 /**
@@ -51,7 +50,6 @@ final class Theme
             new ThemeSetup(),
             new Enqueue(),
             new Menus(),
-            new Sidebars(),
             new Editor(),
             new Customizer(),
             new Cleanup(),

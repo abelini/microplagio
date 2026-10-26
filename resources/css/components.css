@@ -835,6 +835,19 @@
   color: var(--color-ink-3);
 }
 
+.archive-head__desc a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-cobalt);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+.archive-head__desc a:hover {
+  text-decoration-color: var(--color-ink);
+  background: linear-gradient(transparent 58%, rgb(255 228 92 / 0.85) 58%);
+}
+
 .archive-head__author {
   display: flex;
   align-items: center;

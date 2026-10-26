@@ -326,6 +326,17 @@
   color: #c9c4b9;
 }
 
+.author-box__bio a {
+  color: var(--color-marker);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+.author-box__bio a:hover {
+  color: var(--color-paper);
+}
+
 .author-box__links {
   display: flex;
   flex-wrap: wrap;

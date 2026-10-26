@@ -50,9 +50,6 @@ $categories = get_categories([
                     <li><a href="<?php echo esc_url(home_url('/?s=')); ?>"><?php esc_html_e('buscar', 'microplagio'); ?></a></li>
                     <li><a href="<?php echo esc_url(get_feed_link()); ?>">rss</a></li>
                     <li><a href="<?php echo esc_url(home_url('/feed/atom/')); ?>">atom</a></li>
-                    <?php if (is_active_sidebar('footer-1')): ?>
-                        <li class="site-foot__widget"><?php dynamic_sidebar('footer-1'); ?></li>
-                    <?php endif; ?>
                 </ul>
             </nav>
 

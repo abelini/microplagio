@@ -54,7 +54,7 @@ $description = get_the_archive_description();
                 </div>
 
                 <?php if (get_the_author_meta('description', (int) get_queried_object_id()) !== ''): ?>
-                    <p class="archive-head__desc"><?php echo esc_html(PostMeta::authorBio()); ?></p>
+                    <p class="archive-head__desc"><?php echo wp_kses_post(PostMeta::authorBio()); ?></p>
                 <?php endif; ?>
             <?php else: ?>
                 <h1 class="archive-head__title"><?php echo esc_html($heading); ?></h1>
