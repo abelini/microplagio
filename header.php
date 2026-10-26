@@ -85,7 +85,8 @@ $mpVersion = Theme::getInstance()->version();
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button type="button" class="icon-btn nav-burger" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="<?php echo esc_attr('Abrir menú'); ?>">
-                <span></span><span></span><span></span>
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
     </div>
