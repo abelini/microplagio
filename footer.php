@@ -60,7 +60,7 @@ $categories = get_categories([
                     <?php foreach ($socials as $network => $social): ?>
                         <li>
                             <a href="<?php echo esc_url($social['url']); ?>" <?php echo $network === 'email' ? '' : 'target="_blank" rel="me noopener noreferrer"'; ?>>
-                                <i class="<?php echo esc_attr($social['icon']); ?>" aria-hidden="true"></i>
+                                <i class="<?php echo esc_attr($social['icon']); ?>"></i>
                                 <?php echo esc_html($network); ?>
                                 <?php if ($network !== 'email'): ?>
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span>
