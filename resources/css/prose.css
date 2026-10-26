@@ -167,14 +167,29 @@
   margin-inline: auto;
 }
 
-.prose-mp figcaption,
-.prose-mp .wp-caption-text {
+/* WordPress pone display: table-caption en los pies de foto de las imágenes
+   en bloque: así el pie se encoge al ancho de su texto en vez de medir lo que
+   mide la figura. Se fuerza bloque y ancho completo. */
+.mp-body .prose-mp figure figcaption,
+.mp-body .prose-mp .wp-caption-text,
+.mp-body .prose-mp .wp-element-caption {
+  display: block;
+  width: 100%;
+  max-width: none;
+  float: none;
+  caption-side: bottom;
   font-family: var(--font-mono);
   font-size: 0.66rem;
   line-height: 1.5;
   color: var(--color-muted);
   margin-top: 0.5rem;
   text-align: right;
+}
+
+/* La figura tampoco necesita ser una tabla para que el pie la iguale. */
+.mp-body .prose-mp figure.wp-block-image {
+  display: block;
+  max-width: 100%;
 }
 
 .prose-mp .alignleft {
