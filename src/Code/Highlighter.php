@@ -83,9 +83,14 @@ final class Highlighter
      * Decodifica el HTML final para que el contenido del snippet
      * se renderice en crudo (los spans de Tempest son tags reales
      * y sobreviven intactos).
+     *
+     * `<?` y `<!` se re-escapan: el navegador los interpreta como
+     * comentarios bogus y se comería el código hasta el primer `>`.
      */
     private function raw(string $html): string
     {
-        return html_entity_decode($html, ENT_QUOTES, 'UTF-8');
+        $html = html_entity_decode($html, ENT_QUOTES, 'UTF-8');
+
+        return str_replace(['<?', '<!'], ['&lt;?', '&lt;!'], $html);
     }
 }
