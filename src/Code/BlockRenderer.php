@@ -37,7 +37,7 @@ final class BlockRenderer
             return $content;
         }
 
-        $code = trim($matches[1]);
+        $code = html_entity_decode($matches[1], ENT_QUOTES, "UTF-8");
         $code = str_replace(["\r\n", "\r"], "\n", $code);
         $code = rtrim($code);
 
