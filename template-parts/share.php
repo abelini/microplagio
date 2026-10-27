@@ -1,11 +1,10 @@
 <?php
-
 declare(strict_types=1);
 
-$title = get_the_title();
-$url   = (string) get_permalink();
-$x     = 'https://x.com/intent/post?text=' . rawurlencode($title) . '&url=' . rawurlencode($url);
-$hn    = 'https://news.ycombinator.com/submitlink?u=' . rawurlencode($url) . '&t=' . rawurlencode($title);
+$title  = get_the_title();
+$url    = (string) get_permalink();
+$x      = 'https://x.com/intent/post?text=' . rawurlencode($title) . '&url=' . rawurlencode($url);
+$ln     = 'https://www.linkedin.com/shareArticle?url=' . rawurlencode($url) . '&title=' . rawurlencode($title);
 ?>
 <div class="share">
     <span class="share__label">// <?php echo esc_html('compartir'); ?></span>
@@ -16,5 +15,6 @@ $hn    = 'https://news.ycombinator.com/submitlink?u=' . rawurlencode($url) . '&t
     </button>
 
     <a class="share__btn" href="<?php echo esc_url($x); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span></a>
-    <a class="share__btn" href="<?php echo esc_url($hn); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-hacker-news"></i><span class="screen-reader-text"> <?php echo esc_html('(se abre en una pestaña nueva)'); ?></span></a>
+    <a class="share__btn" href="<?php echo esc_url($ln); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i><span class="screen-reader-text"> <?php echo esc_html('LinkedIn'); ?></span></a>
+    <a class="share__btn" href="https://mastodon.social/@microplagio" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-mastodon"></i><span class="screen-reader-text"> <?php echo esc_html('Mastodon'); ?></span></a>
 </div>
