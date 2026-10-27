@@ -266,15 +266,17 @@
 .share__btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border: 1px solid var(--color-line-2);
   border-radius: 4px;
-  padding: 0.5rem 0.85rem;
+  height: 2.6rem;
+  padding: 0 1rem;
   background: transparent;
   color: var(--color-ink-3);
   font-family: inherit;
   font-size: inherit;
-  min-width: 2.8rem;
+  min-width: 2.6rem;
   text-align: center;
 }
 
@@ -284,17 +286,17 @@
 }
 
 .share__btn i {
-  font-size: 1em;
+  font-size: 1.05rem;
   line-height: 1;
 }
 
 .share__btn .fa {
-  font-size: 1em;
+  font-size: 1.05rem;
   vertical-align: middle;
 }
 
 .share__btn .fa-arrow-up-right-from-square {
-  font-size: 1em;
+  font-size: 1.05rem;
 }
 
 /* Autor */
