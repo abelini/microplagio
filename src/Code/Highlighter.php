@@ -39,12 +39,6 @@ final class Highlighter
             return $this->raw($this->escape($code));
         }
 
-        $cached = Cache::get($language, $code);
-
-        if ($cached !== null) {
-            return $cached;
-        }
-
         try {
             $html = $this->highlighter->parse($code, $language);
         } catch (Throwable) {
@@ -54,11 +48,7 @@ final class Highlighter
         // El contenido del snippet se renderiza tal cual: el HTML
         // dentro del bloque no se escapa, lo que el autor escribió
         // es lo que el navegador interpreta.
-        $html = $this->raw($html);
-
-        Cache::set($language, $code, $html);
-
-        return $html;
+        return $this->raw($html);
     }
 
     public function supports(string $language): bool
