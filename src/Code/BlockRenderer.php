@@ -37,7 +37,17 @@ final class BlockRenderer
             return $content;
         }
 
-        $code = html_entity_decode($matches[1], ENT_QUOTES, "UTF-8");
+        // Normaliza entidades hasta punto fijo (máx. 3 pasadas):
+        // corrige tanto el escape simple de WP como el doble
+        // (&amp;lt; en la BD, producto de pegar HTML en el editor).
+        for ($i = 0; $i < 3; $i++) {
+            $decoded = html_entity_decode($code_string ?? $matches[1], ENT_QUOTES, 'UTF-8');
+            if ($decoded === ($code_string ?? $matches[1])) {
+                break;
+            }
+            $code_string = $decoded;
+        }
+        $code = trim($code_string ?? $matches[1]);
         $code = str_replace(["\r\n", "\r"], "\n", $code);
         $code = rtrim($code);
 

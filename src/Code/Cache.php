@@ -12,7 +12,7 @@ namespace Theme\Microplagio\Code;
  */
 final class Cache
 {
-    private const VERSION = 'v1';
+    private const VERSION = 'v2';
     private const TTL = 7 * DAY_IN_SECONDS;
 
     public static function get(string $language, string $code): ?string
