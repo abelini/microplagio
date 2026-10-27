@@ -68,6 +68,7 @@ while (have_posts()) :
                     </div>
 
                     <?php get_template_part('template-parts/share'); ?>
+                    <?php edit_post_link('editar', '<p class="edit-post-link">', '</p>'); ?>
                     <?php get_template_part('template-parts/author-box'); ?>
                     <?php get_template_part('template-parts/post-nav'); ?>
                     <?php get_template_part('template-parts/related'); ?>
