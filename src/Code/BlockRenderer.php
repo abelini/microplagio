@@ -37,7 +37,7 @@ final class BlockRenderer
             return $content;
         }
 
-        $code = html_entity_decode($matches[1], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $code = trim($matches[1]);
         $code = str_replace(["\r\n", "\r"], "\n", $code);
         $code = rtrim($code);
 
@@ -76,7 +76,7 @@ final class BlockRenderer
         $ext   = Languages::extension($language);
 
         ob_start();
-        ?>
+?>
         <div class="<?php echo esc_attr(implode(' ', $classes)); ?>" data-lang="<?php echo esc_attr($language); ?>">
             <div class="mp-code__bar">
                 <span class="mp-code__dots" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -87,9 +87,10 @@ final class BlockRenderer
                     <span data-copy-label><?php echo esc_html('Copiar'); ?></span>
                 </button>
             </div>
-            <pre class="mp-code__pre" tabindex="0" aria-label="<?php echo esc_attr(sprintf('Código %s', $label)); ?>"><code class="mp-code__code language-<?php echo esc_attr($language); ?>"><?php echo $lines; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML escapado por Tempest. ?></code></pre>
+            <pre class="mp-code__pre" tabindex="0" aria-label="<?php echo esc_attr(sprintf('Código %s', $label)); ?>"><code class="mp-code__code language-<?php echo esc_attr($language); ?>"><?php echo $lines; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML escapado por Tempest. 
+                                                                                                                                                                                                ?></code></pre>
         </div>
-        <?php
+<?php
 
         return (string) ob_get_clean();
     }
